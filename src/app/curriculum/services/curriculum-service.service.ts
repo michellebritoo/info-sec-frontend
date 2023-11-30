@@ -9,12 +9,12 @@ export class CurriculumServiceService {
   private headers = new HttpHeaders({
     'Authorization': 'Basic aW5mb3NlYzppbmZvc2VjMjAyMzI='
   });
-  private readonly requestOptions = { headers: this.headers };
-  private readonly API = "http://localhost:8080/curriculum"
+  private requestOptions = { headers: this.headers };
+  private readonly API = "http://localhost:8080"
 
   constructor(private httpClient: HttpClient) { }
 
-  getCourses() {
-    return this.httpClient.get<CurriculumModel[]>(this.API, this.requestOptions)
+  getCurriculumList() {
+    return this.httpClient.get<CurriculumModel[]>(this.API + "/curriculum", this.requestOptions)
   }
 }

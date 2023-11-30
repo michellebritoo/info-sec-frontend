@@ -3,20 +3,20 @@ import { CurriculumModel } from '../model/curriculum-model';
 import { CurriculumServiceService } from '../services/curriculum-service.service';
 import { Observable } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
-
 @Component({
   selector: 'app-curriculum',
   templateUrl: './curriculum.component.html',
   styleUrls: ['./curriculum.component.css']
 })
 export class CurriculumComponent implements OnInit {
-  displayedColumns = ['name', 'phoneNumber', 'email', 'webSite', 'experience'];
+  displayedColumns = ['name', 'email'];
   
   //curriculumList: Observable<CurriculumModel[]>;
   dataSource: MatTableDataSource<CurriculumModel> = new MatTableDataSource();
 
   constructor(private curriculumService: CurriculumServiceService) {
-    this.curriculumService.getCourses().subscribe(
+    this.curriculumService.getCurriculumList()
+    .subscribe(
       data => {
         this.dataSource.data = data;
       },
