@@ -3,6 +3,7 @@ import { CurriculumModel } from '../model/curriculum-model';
 import { CurriculumServiceService } from '../services/curriculum-service.service';
 import { Observable } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-curriculum',
   templateUrl: './curriculum.component.html',
@@ -14,7 +15,7 @@ export class CurriculumComponent implements OnInit {
   //curriculumList: Observable<CurriculumModel[]>;
   dataSource: MatTableDataSource<CurriculumModel> = new MatTableDataSource();
 
-  constructor(private curriculumService: CurriculumServiceService) {
+  constructor(private curriculumService: CurriculumServiceService, private router: Router) {
     this.curriculumService.getCurriculumList()
     .subscribe(
       data => {
@@ -29,9 +30,12 @@ export class CurriculumComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   selectItem(event: any) {
-    console.log("selecionado")
+    console.log("selected")
+    this.router.navigate(['curriculum/details'])
   }
 
+  createItem() {
+    this.router.navigate(['curriculum/new'])
+  }
 }
