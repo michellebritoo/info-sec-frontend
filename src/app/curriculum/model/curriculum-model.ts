@@ -1,8 +1,8 @@
 export interface CurriculumModel {
-    _id: string;
+    id: number;
     name: string;
-    number: string;
+    phoneNumber: string;
     email: string;
-    site: string;
-    profissionalExperinece: string;
+    webSite: string;
+    experience: string;
 }
