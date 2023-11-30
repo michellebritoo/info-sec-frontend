@@ -1,1 +1,27 @@
-<p>curriculum-forms works!</p>
+<mat-card class="flex-container">
+    <mat-toolbar color="primary">
+        <span>Cadastre seu currículo</span>
+      </mat-toolbar>
+
+    <form [formGroup]="form">
+        <mat-form-field class="flex-item">
+            <input matInput placeholder="Insira seu nome" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="flex-item">  
+            <input matInput placeholder="Insira seu telefone" formControlName="phoneNumber">
+        </mat-form-field>
+        <mat-form-field class="flex-item">
+            <input matInput placeholder="Insira seu email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="flex-item">
+            <input matInput placeholder="Insira seu website" formControlName="webSite">
+        </mat-form-field>
+        <mat-form-field class="flex-item">
+            <textarea matInput placeholder="Descreva sua experiência" formControlName="experience"></textarea>
+        </mat-form-field>  
+    </form>
+
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Enviar</button>
+      </mat-card-actions>
+</mat-card>

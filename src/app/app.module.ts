@@ -7,6 +7,7 @@ import { AppMaterialModule } from './shared/app-material/app-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CurriculumItemComponent } from './curriculum/curriculum-item/curriculum-item.component';
 import { CurriculumFormsComponent } from './curriculum/curriculum-forms/curriculum-forms.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CurriculumFormsComponent } from './curriculum/curriculum-forms/curricul
     BrowserAnimationsModule,
     AppMaterialModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
