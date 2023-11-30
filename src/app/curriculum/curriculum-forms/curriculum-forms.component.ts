@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CurriculumServiceService } from '../services/curriculum-service.service';
 
 @Component({
   selector: 'app-curriculum-forms',
@@ -10,7 +11,7 @@ export class CurriculumFormsComponent implements OnInit {
   
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private service: CurriculumServiceService) {
     this.form = this.formBuilder.group({
       name: [null],
       phoneNumber: [null],
@@ -24,7 +25,14 @@ export class CurriculumFormsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("enviado")
+    this.service.createCurriculum(this.form.value).subscribe(
+      data => {
+        console.log("cadastrou");
+      },
+      error => {
+        console.error('Erro ao obter currículos:', error);
+      }
+    );;
   }
 
 }
