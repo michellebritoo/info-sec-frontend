@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class CurriculumComponent implements OnInit {
   displayedColumns = ['name', 'email'];
   
-  //curriculumList: Observable<CurriculumModel[]>;
   dataSource: MatTableDataSource<CurriculumModel> = new MatTableDataSource();
 
   constructor(private curriculumService: CurriculumServiceService, private router: Router) {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CurriculumServiceService } from '../services/curriculum-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-curriculum-forms',
@@ -15,7 +16,8 @@ export class CurriculumFormsComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: CurriculumServiceService,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private router: Router
     ) {
     this.form = this.formBuilder.group({
       name: [null],
@@ -34,6 +36,7 @@ export class CurriculumFormsComponent implements OnInit {
       this.service.createCurriculum(this.form.value).subscribe(
         data => {
           this.snackbar.open("Currículo cadastrado com sucesso!", '', { duration: 3000 });
+          this.router.navigate(['/']);
         },
         error => {
           this.snackbar.open("Erro ao cadastrar currículo", '', { duration: 3000 });

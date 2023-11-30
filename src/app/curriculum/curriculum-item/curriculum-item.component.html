@@ -5,9 +5,8 @@
       <mat-card-subtitle>{{ curriculum.email }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <!-- Adicione aqui os campos específicos do currículo que deseja exibir -->
-      <p>Telefone: {{ curriculum.phoneNumber }}</p>
-      <p>Website: {{ curriculum.webSite }}</p>
+      <p *ngIf="curriculum.phoneNumber">Telefone: {{ curriculum.phoneNumber }}</p>
+      <p *ngIf="curriculum.webSite">Website: {{ curriculum.webSite }}</p>
       <p>Experiência: {{ curriculum.experience }}</p>
     </mat-card-content>
     <mat-card-actions>
