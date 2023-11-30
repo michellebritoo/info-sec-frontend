@@ -29,4 +29,9 @@ export class CurriculumComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  selectItem(event: any) {
+    console.log("selecionado")
+  }
+
 }
