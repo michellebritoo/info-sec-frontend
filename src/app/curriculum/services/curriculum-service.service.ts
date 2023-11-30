@@ -24,11 +24,18 @@ export class CurriculumServiceService {
       'Content-Type': 'application/json',
       'Authorization': 'Basic aW5mb3NlYzppbmZvc2VjMjAyMzI=',
       'X-Name': curriculum.name,
-      'X-PhoneNumber': curriculum.phoneNumber,
       'X-Email': curriculum.email,
-      'X-WebSite': curriculum.webSite,
       'X-Experience': curriculum.experience
     });
+
+    if (curriculum.webSite) {
+      headers.append('X-WebSite', curriculum.webSite)
+    }
+
+    if (curriculum.phoneNumber) {
+      headers.append('X-PhoneNumber', curriculum.phoneNumber)
+    }
+
     const options = { headers: headers }
 
     return this.httpClient.post(this.API + "/curriculum", null, options);
