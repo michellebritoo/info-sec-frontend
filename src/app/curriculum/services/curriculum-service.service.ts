@@ -48,6 +48,6 @@ export class CurriculumServiceService {
     });
     const requestOptions = { headers: headers };
 
-    return this.httpClient.get<CurriculumModel[]>(this.API + "/curriculum/" + id, requestOptions)
+    return this.httpClient.get<CurriculumModel>(this.API + "/curriculum/" + id, requestOptions)
   }
 }

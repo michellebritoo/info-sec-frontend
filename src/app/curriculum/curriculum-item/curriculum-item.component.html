@@ -1,16 +1,17 @@
 <div class="center-container">
-    <mat-card class="card-curriculum">
-      <mat-card-header>
-        <mat-card-title>Teste</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>This card indeterminates progress bar.</p>
-        <p>descrição</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-fab extended color="primary" (click)="onClick()">Voltar à lista</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  
+  <mat-card class="card-curriculum">
+    <mat-card-header>
+      <mat-card-title>{{ curriculum.name }}</mat-card-title>
+      <mat-card-subtitle>{{ curriculum.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Adicione aqui os campos específicos do currículo que deseja exibir -->
+      <p>Telefone: {{ curriculum.phoneNumber }}</p>
+      <p>Website: {{ curriculum.webSite }}</p>
+      <p>Experiência: {{ curriculum.experience }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-fab extended color="primary" (click)="onClick()">Voltar à lista</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

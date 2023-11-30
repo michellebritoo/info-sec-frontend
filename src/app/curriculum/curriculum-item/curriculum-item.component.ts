@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CurriculumServiceService } from '../services/curriculum-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CurriculumModel } from '../model/curriculum-model';
 
 @Component({
   selector: 'app-curriculum-item',
@@ -9,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./curriculum-item.component.css']
 })
 export class CurriculumItemComponent implements OnInit {
+  curriculum : CurriculumModel = {} as CurriculumModel;
   curriculumId: number | null;
 
   constructor(
@@ -27,6 +29,7 @@ export class CurriculumItemComponent implements OnInit {
     if (this.curriculumId != null) {
       this.service.getCurriculumById(this.curriculumId).subscribe(
         data => {
+          this.curriculum = data;
           console.log(data);
         },
         error => {
