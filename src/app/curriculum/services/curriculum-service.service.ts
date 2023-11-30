@@ -40,4 +40,14 @@ export class CurriculumServiceService {
 
     return this.httpClient.post(this.API + "/curriculum", null, options);
   }
+
+  getCurriculumById(id: number) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Basic aW5mb3NlYzppbmZvc2VjMjAyMzI=',
+      'id': id
+    });
+    const requestOptions = { headers: headers };
+
+    return this.httpClient.get<CurriculumModel[]>(this.API + "/curriculum/" + id, requestOptions)
+  }
 }

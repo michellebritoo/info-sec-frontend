@@ -5,5 +5,4 @@ export interface CurriculumModel {
     email: string;
     webSite: string;
     experience: string;
-    selected?: boolean;
 }

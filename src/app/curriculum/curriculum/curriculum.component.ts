@@ -30,9 +30,9 @@ export class CurriculumComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectItem(event: any) {
-    console.log(event)
-    this.router.navigate(['curriculum/details'])
+  selectItem(curriculum: CurriculumModel) {
+    console.log(curriculum)
+    this.router.navigate(['curriculum/details', {id: curriculum.id}])
   }
 
   createItem() {
