@@ -31,7 +31,7 @@ export class CurriculumComponent implements OnInit {
   }
 
   selectItem(event: any) {
-    console.log("selected")
+    console.log(event)
     this.router.navigate(['curriculum/details'])
   }
 

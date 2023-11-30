@@ -1,0 +1,12 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+  
+.card-curriculum {
+    width: 100%;
+    max-width: auto;
+}
+  
